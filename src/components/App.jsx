@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-one-expression-per-line,
    react/jsx-indent-props */
-import React from 'react';
+import React, { Fragment } from 'react';
 import './app.css';
 
 import Toggle from './Toggle.jsx';
@@ -14,7 +14,7 @@ const App = () => (
 		</header>
 		<Toggle>
 			{({ on, toggle }) => (
-				<div>
+				<Fragment>
 					{
 						on
 						&& <h1>Toggle Me</h1>
@@ -22,12 +22,15 @@ const App = () => (
 					<button type="submit" onClick={toggle}>
 						Show/Hide
 					</button>
-				</div>
+				</Fragment>
 			)}
 		</Toggle>
+
+		<br />
+
 		<Toggle
 			render={({ on, toggle }) => (
-				<div>
+				<Fragment>
 					{
 						on
 						&& <nav>Menu</nav>
@@ -35,7 +38,7 @@ const App = () => (
 					<button type="submit" onClick={toggle}>
 						Show menu
 					</button>
-				</div>
+				</Fragment>
 			)}
 		/>
 	</div>
